@@ -13,6 +13,7 @@ RUN apk -q --no-progress --purge --no-cache upgrade \
     git \
     gcc \
     libc6-compat \
+ && go get golang.org/x/tools/cmd/godoc \
  && apk -q --no-progress --purge --no-cache upgrade \
  && rm -vrf /var/cache/apk/*
 
