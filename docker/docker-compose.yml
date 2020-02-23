@@ -16,6 +16,8 @@ services:
       - "8000:8000"
       - "40000:40000"
     volumes:
+      - "~/.ssh/:/root/.ssh/"
+      - "~/.gitconfig:/root/.gitconfig"
       - "../:/go/src/learn-go-with-test/"
       - "go_bin:/root/go/bin/"
       - "go_cache:/root/.cache/go-build"
