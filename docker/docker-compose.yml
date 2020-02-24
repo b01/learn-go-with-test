@@ -9,7 +9,8 @@ services:
       context: "../"
       dockerfile: "./docker/go/Dockerfile"
     environment:
-      APP_NAME: "Learn Go With Test"
+      APP_NAME: "Learn Go with Test"
+    image: "khalifahks/go:1.13.8-alpine3.11.3"
     networks:
       net: null
     ports:

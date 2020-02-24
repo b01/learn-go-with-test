@@ -1,4 +1,4 @@
-FROM golang:1.13-alpine3.10 as go-dev
+FROM golang:1.13-alpine3.11 as go-dev
 
 # References:
 # https://talks.golang.org/2014/organizeio.slide#10
