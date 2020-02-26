@@ -1,20 +1,18 @@
 package bitcoin
 
 import (
-	"fmt"
 	"testing"
 )
 
-func TestWallet(t *testing.T)  {
-	wlt := Wallet{}
+func TestBitcoin(t *testing.T)  {
+	t.Run("Deposit", func(t *testing.T) {
+		wlt := Wallet{}
+		w := Bitcoin(10)
+		wlt.Deposit(w)
+		g := wlt.Balance()
 
-	wlt.Deposit(10)
-	w := 10
-	g := wlt.Balance()
-
-	fmt.Printf("\naddress of wallet balance in test: %v\n\n", &wlt.bal)
-
-	if w != g {
-		t.Errorf("want %v got %v", w, g)
-	}
+		if w != g {
+			t.Errorf("want %s got %s", w, g)
+		}
+	})
 }
