@@ -12,7 +12,10 @@ func TestCounting(t *testing.T)  {
 		CountDown(&b)
 
 		g := b.String()
-		w := "3"
+		w := `3
+2
+1
+Go!`
 
 		if g != w {
 			t.Errorf("got %q, want %q", g, w)
