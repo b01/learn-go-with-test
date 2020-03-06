@@ -7,16 +7,29 @@ import (
 	"time"
 )
 
-func CountDown(w io.Writer)  {
+type Sleeper interface {
+	Sleep()
+}
+
+type DefaultSleeper struct {
+	
+}
+
+func (s *DefaultSleeper) Sleep ()  {
+	time.Sleep(1 * time.Second)
+}
+
+func CountDown(w io.Writer, s Sleeper)  {
 	for i := 3; i > 0; i-- {
-		time.Sleep(1 * time.Second)
+		s.Sleep()
 		fmt.Fprintln(w, i)
 	}
 
-	time.Sleep(1 * time.Second)
+	s.Sleep()
 	fmt.Fprint(w, "Go!")
 }
 
 func main()  {
-	CountDown(os.Stdout)
+	s := &DefaultSleeper{}
+	CountDown(os.Stdout, s)
 }
