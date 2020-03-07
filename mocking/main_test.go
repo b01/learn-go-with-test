@@ -85,5 +85,4 @@ func TestConfigurableSleeper(t *testing.T)  {
 			t.Errorf("should have slept for %v but slept for %v", sleepTime, spyTime.durationSlept)
 		}
 	})
-	
 }
